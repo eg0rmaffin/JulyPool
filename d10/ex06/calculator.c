@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   calculator.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 15:37:38 by ckumera           #+#    #+#             */
-/*   Updated: 2019/07/16 21:32:46 by ckumera          ###   ########.fr       */
+/*   Created: 2019/07/16 18:04:15 by ckumera           #+#    #+#             */
+/*   Updated: 2019/07/16 22:55:07 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_sort(int *tab, int length, int (*f)(int, int))
-{
-	int run;
+#include "header.h"
 
-	run = 0;
-	while (run < length - 1)
-	{
-		if (f(tab[run], tab[run + 1]) > 0)
-			return (0);
-		++run;
-	}
-	return (1);
+int		calculator(int a, int b, char *op)
+{
+	if (op[0] == 47)
+		return (a / b);
+	if (op[0] == 37)
+		return (a % b);
+	if (op[0] == 42)
+		return (a * b);
+	if (op[0] == 43)
+		return (a + b);
+	if (op[0] == 45)
+		return (a - b);
 }

@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 15:37:38 by ckumera           #+#    #+#             */
-/*   Updated: 2019/07/16 21:32:46 by ckumera          ###   ########.fr       */
+/*   Created: 2019/07/09 05:58:24 by ckumera           #+#    #+#             */
+/*   Updated: 2019/07/16 22:56:41 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_sort(int *tab, int length, int (*f)(int, int))
-{
-	int run;
+#include "header.h"
 
-	run = 0;
-	while (run < length - 1)
+int		ft_atoi(char *str)
+{
+	int sign;
+	int res;
+
+	sign = 1;
+	res = 0;
+	while (((*str > 8) && (*str < 14)) || (*str == 32))
+		str++;
+	if (*str == 45)
 	{
-		if (f(tab[run], tab[run + 1]) > 0)
-			return (0);
-		++run;
+		sign = 88;
+		str++;
 	}
-	return (1);
+	else if (*str == 43)
+		str++;
+	while ((*str > 47) && (*str < 58))
+	{
+		res = (res * 10) + (*str - 48);
+		str++;
+	}
+	if (sign != 1)
+	{
+		res = -1 * res;
+	}
+	return (res);
 }

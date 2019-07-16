@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 15:37:38 by ckumera           #+#    #+#             */
-/*   Updated: 2019/07/16 21:32:46 by ckumera          ###   ########.fr       */
+/*   Created: 2019/07/09 05:10:46 by ckumera           #+#    #+#             */
+/*   Updated: 2019/07/16 22:55:57 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_sort(int *tab, int length, int (*f)(int, int))
-{
-	int run;
+#include "header.h"
 
-	run = 0;
-	while (run < length - 1)
+void	ft_putstr(char *str)
+{
+	int runner;
+
+	runner = 0;
+	while (*(str + runner) != '\0')
 	{
-		if (f(tab[run], tab[run + 1]) > 0)
-			return (0);
-		++run;
+		ft_putchar(*(str + runner));
+		runner++;
 	}
-	return (1);
 }

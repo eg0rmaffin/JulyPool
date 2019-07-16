@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 15:37:38 by ckumera           #+#    #+#             */
-/*   Updated: 2019/07/16 21:32:46 by ckumera          ###   ########.fr       */
+/*   Created: 2019/07/10 16:04:52 by ckumera           #+#    #+#             */
+/*   Updated: 2019/07/16 22:57:23 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_sort(int *tab, int length, int (*f)(int, int))
-{
-	int run;
+#include <unistd.h>
+#include "header.h"
 
-	run = 0;
-	while (run < length - 1)
-	{
-		if (f(tab[run], tab[run + 1]) > 0)
-			return (0);
-		++run;
-	}
-	return (1);
+void	ft_putchar(char a)
+{
+	write(1, &a, 1);
 }

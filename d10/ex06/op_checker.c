@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   op_checker.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 15:37:38 by ckumera           #+#    #+#             */
-/*   Updated: 2019/07/16 21:32:46 by ckumera          ###   ########.fr       */
+/*   Created: 2019/07/16 18:33:24 by ckumera           #+#    #+#             */
+/*   Updated: 2019/07/16 22:56:54 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_sort(int *tab, int length, int (*f)(int, int))
+#include "header.h"
+
+char	*op_checker(char *str)
 {
 	int run;
 
 	run = 0;
-	while (run < length - 1)
-	{
-		if (f(tab[run], tab[run + 1]) > 0)
-			return (0);
+	while (str[run] != '\0')
 		++run;
-	}
-	return (1);
+	if ((run == 1) && ((str[0] == 47) || (str[0] == 37) ||
+				(str[0] == 42) || (str[0] == 43) || (str[0] == 45)))
+		return (str);
+	else
+		return ("z");
 }
