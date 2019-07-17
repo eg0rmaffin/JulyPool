@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_list_push_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/17 17:41:45 by ckumera           #+#    #+#             */
-/*   Updated: 2019/07/17 21:13:01 by ckumera          ###   ########.fr       */
+/*   Created: 2019/07/17 19:05:23 by ckumera           #+#    #+#             */
+/*   Updated: 2019/07/17 21:41:57 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "ft_list.h"
 
-typedef struct			s_list
+void		ft_list_push_back(t_list **begin_list, void *data)
 {
-	struct s_list		*next;
-	void				*data;
-}						t_list;
+	t_list *elem;
 
-t_list					*ft_create_elem(void *data);
-
-#endif
+	if (*begin_list == 0)
+		*begin_list = ft_create_elem(data);
+	else
+	{
+		elem = *begin_list;
+		while (elem->next)
+			elem = elem->next;
+		elem = ft_create_elem(elem);
+	}
+}
