@@ -6,17 +6,17 @@
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 18:12:26 by ckumera           #+#    #+#             */
-/*   Updated: 2019/07/18 19:01:43 by ckumera          ###   ########.fr       */
+/*   Updated: 2019/07/18 20:00:14 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <fcntl.h>
 
-int		main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
-	int fnum;
-	char c;
+	int		fnum;
+	char	c;
 
 	if (argc < 2)
 		write(2, "File name missing.\n", 19);
@@ -26,7 +26,7 @@ int		main(int argc, char **argv)
 	{
 		fnum = open(argv[1], O_RDONLY);
 		while (read(fnum, &c, 1))
-			write (1, &c, 1);
+			write(1, &c, 1);
 	}
 	return (0);
 }
