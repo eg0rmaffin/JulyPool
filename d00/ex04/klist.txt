@@ -1,0 +1,5 @@
+Credentials cache: API:D78BA189-73E6-4499-ADEC-B31321875586
+        Principal: ckumera@21-SCHOOL.RU
+
+  Issued                Expires               Principal
+Jul  2 14:19:19 2019  Jul  3 14:19:19 2019  krbtgt/21-SCHOOL.RU@21-SCHOOL.RU
